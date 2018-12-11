@@ -1,0 +1,157 @@
+.contract-tpl-box{
+  .el-dialog{
+    width: 676px;
+  }
+  .el-dialog__header{
+    padding: 0;
+    .el-dialog__headerbtn{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #eee;
+      right: 46px;
+      top: 35px;
+      i{
+        color: #fff;
+      }
+    }
+  }
+  .el-dialog--center .el-dialog__body{
+    padding: 40px 30px;
+  }
+  .content-tpl{
+    font-size: 12px;
+    color: #4A4A4A;
+    h4{
+      font-size: 20px;
+      color: #4A4A4A;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .base-info{
+      p{
+        width: 60%;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+      p:nth-child(even){
+        float: right;
+        width: 176px;
+      }
+      span.s-value{
+        color: #9B9B9B;
+        margin-left: 18px;
+      }
+    }
+    .base-two{
+      margin: 14px 0 30px;
+    }
+    .terms{
+      h5{
+        color: #000;
+        margin-bottom: 16px;
+        span{
+          margin-right: 18px;
+          font-weight: bold;
+        }
+      }
+      &>div{
+        color: #4A4A4A;
+        line-height: 20px;
+        margin-bottom: 16px;
+        &>div{
+          margin: 16px 0;
+          p{
+            width: 60%;
+            display: inline-block;
+          }
+          p:nth-child(even){
+            float: right;
+            width: 176px;
+          }
+        }
+        &>div.contact-way{
+          margin: 6px 0;
+        }
+        &>p{
+          padding-left: 20px;
+          margin-bottom: 16px;
+        }
+        &>p:first-child{
+          margin-top: 16px;
+        }
+        &>p:last-child{
+          margin-bottom: 0;
+        }
+        /*label{
+          color: #9B9B9B;
+          display: inline-block;
+          min-width: 80px;
+          position: relative;
+          text-align: center;
+          padding: 0 4px;
+          box-sizing: border-box;
+        }
+        label::after{
+          content: '';
+          width: 100%;
+          height: 1px;
+          background: #4A4A4A;
+          position: absolute;
+          left: 0;
+          bottom:0;
+        }*/
+      }
+    }
+    .sign-info{
+      margin-top: 50px;
+      p{
+        width: 49%;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+    }
+    .annex{
+      &>p{
+        margin-bottom: 6px;
+      }
+      &>div{
+        border: 1px solid #EBEBEB;
+        border-radius: 6px;
+        padding: 1px;
+      }
+      .sign-info{
+        margin-top: 0;
+        padding: 4px;
+        p:nth-child(5),p:nth-child(6){
+          margin-bottom: 0;
+        }
+      }
+      .el-table--border{
+        border-left: none;
+      }
+      .el-table {
+        tr{
+          td:last-child, th:nth-child(5){
+            border-right: none;
+          }
+        }
+        tr:last-child{
+          td{
+            border-bottom: none;
+          }
+        }
+      }
+      .el-table::before,.el-table--border::after{
+        height: 0;
+      }
+    }
+    .important-info{
+      color: #000;
+      font-weight: bold;
+    }
+    .important-info-line{
+      text-decoration:underline;
+    }
+  }
+}

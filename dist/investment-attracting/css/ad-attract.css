@@ -1,0 +1,67 @@
+
+body,
+div,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'PingFangSC-Regular', 'microsoft yahei';
+}
+
+body {
+
+    background: #161616;
+}
+
+header img {
+    width: 100%;
+}
+
+.g-ad {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.u-middle {
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: #161616;
+    margin: 0 0.8rem;
+    font-size: 0;
+    vertical-align: middle;
+}
+.flex {
+	flex: 1;
+}
+.u-middle p {
+    display: inline-block;
+    margin-right: .3rem;
+    width: 1.75rem;
+    line-height: 0.6rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.32rem;
+    color: #FFFFFF;
+    font-weight: 400;
+    letter-spacing: .0114rem;
+    text-align: center;
+    vertical-align: middle;
+    background: #D09013;
+}
+
+.u-middle p:nth-child(3n) {
+    margin-right: 0;
+}
+
+footer {
+    font-size: 0;
+}
+
+footer img {
+    width: 100%;
+}

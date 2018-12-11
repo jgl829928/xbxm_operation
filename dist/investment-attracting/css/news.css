@@ -1,0 +1,40 @@
+html{
+	font-family: 'PingFangSC-Regular','microsoft yahei';
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+.g-content{
+	padding: 0.38rem 0.3rem;
+}
+.g-content .u-content{
+	width: 100%;
+	font-size: 0;
+}
+.g-content .u-title{
+	font-size: 0.46rem;
+	color: #595959;
+}
+.g-content .u-little-title{
+	font-size: 0.3rem;
+	color: #878787;
+	margin-top: 0.28rem;
+}
+.g-content .u-little-title .u-author{
+	font-size: 0.3rem;
+	color: #FF7623;
+	padding-right: 0.2rem;
+}
+.g-content .u-content{
+	padding: 0.6rem 0;
+	color: #929292;
+	line-height: .42rem;
+}
+.g-content .u-content p {
+	font-size: .3rem;
+}
+.g-content .u-content img{
+	padding: 0.28rem 0;
+	width: 100%;
+}

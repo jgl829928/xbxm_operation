@@ -1,0 +1,98 @@
+html{
+	font-family: 'PingFangSC-Regular','microsoft yahei';
+}
+div,body,p{
+	margin: 0;
+	padding: 0;
+}
+#u-name{
+	font-weight: 700;
+	color: #4D4D4D;
+}
+.g-content:last-child{
+	border-bottom:0.2rem solid #F7F7F7;
+}
+.u-line {
+	line-height: .02rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.3rem;
+	text-align: center;
+	font-size: 0;
+}
+.u-line i {
+	display: inline-block;
+	width: 0.42rem;
+	height: 1px;
+	background: #FF7623;
+}
+.u-description {
+	margin: 0 0.39rem;
+	font-size: 0;
+}
+.u-description img{
+	width: 100%;
+}
+/*第一段话*/
+.u-page {
+	line-height: 0.5rem;
+	margin: 0.7rem 0.5rem 0.44rem 0.5rem;
+	font-size: 0;
+	color: #000;
+	vertical-align: middle;
+}
+
+.u-page span {
+	vertical-align: middle;
+	font-size: 0.28rem;
+	letter-spacing: 0.01rem;
+}
+.u-color {
+	color: #FF7623;
+}
+.u-banner {
+	margin: 0 0.39rem;
+	font-size: 0;
+}
+.u-banner img{
+	width: 100%;
+}
+/*第二段话*/
+.u-second {
+	margin: 0.44rem 0.5rem 0rem 0.5rem;
+}
+.u-top {
+	margin-top: 1.1rem;
+}
+/*slogan*/
+.u-slogan {
+	font-size: 0;
+	margin:0.5rem 0.5rem 0.4rem 0.5rem;
+}
+.u-slogan p {
+	line-height: 0.4rem;
+	vertical-align: middle;
+	font-size: 0.28rem;
+	color: #666666;
+}
+.u-title {
+	font-weight: 700;
+	margin-bottom: 0.08rem;
+	vertical-align: middle;
+}
+.u-title i {
+	display: inline-block;
+	width: 0.10rem;
+	height: 0.10rem;
+	margin-top: -0.05rem;
+	border-radius: 50%;
+	margin-right: 0.12rem;
+	vertical-align: middle;
+	background: #FF7623;
+}
+.u-slogan span {
+	vertical-align: middle;
+	font-size: 0.28rem;
+}
+.u-margin-top {
+	margin-top: 0;
+}

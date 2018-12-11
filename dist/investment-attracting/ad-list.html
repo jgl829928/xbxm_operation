@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+		
+    <title>商户列表</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/ad-list.css">
+</head>
+<body>
+	<div class="g-add-list">
+		<ul>
+<!-- 
+			<li>
+				<div class="u-image">
+					<img src="" alt="">
+				</div>
+				<div class="u-content">
+					<div class="u-flex">
+						<span class="u-topFir">东墙面第三块</span>
+						<span class="u-top">8㎡</span>
+					</div>
+					<div class="u-flex">
+						<span class="u-gray">未出租</span>
+						<span class="u-button">
+							<span>我要投放</span>
+						</span>
+					</div>
+				</div>
+			</li> -->
+		</ul>
+	</div>
+	<script src="./js/zepto.js"></script>
+	<script>
+			(function(){  
+    	//获取页面传过来的参数
+    var getQueryString = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            var q = window.location.pathname.substr(1).match(reg_rewrite);
+            if(r != null){
+                return decodeURIComponent(r[2]);
+            }else if(q != null){
+                return decodeURIComponent(q[2]);
+            }else{
+                return null;
+            }
+        }
+    	var marketName=getQueryString('marketName')
+     	$('title').html(marketName)
+    	var marketCode=getQueryString('marketCode')
+				$.ajax({
+					 url:'https://oms.uselect.com.cn/business/operation/billboards/list/'+marketCode,
+					type:'get',
+					dataType:'json',
+					success:function(res){
+							if(res && res.data &&res.code === 0){
+								if(res.data.length !== 0){
+									for(var i=0;i<res.data.length;i++){
+										var timeFormat,time
+									if(res.data[i].nextInitialTime  && res.data[i].bdStatus.code == 2){
+									time = res.data[i].nextInitialTime
+									var timeS = time.split('-').join('年')
+									 timeFormat = timeS+'月后可租'
+								}else{
+									timeFormat = '未出租'
+								}
+									$('.g-add-list ul').append('<li><div class="u-image"><img src="'+res.data[i].imageUrl+'" alt=""></div><div class="u-content"><div class="u-flex"><span class="u-topFir">'+res.data[i].bdName+'</span><span class="u-top">'+res.data[i].bdSize+'㎡</span></div><div class="u-flex"><span class="u-gray">'+timeFormat+'</span><span class="u-button" title='+res.data[i].billboardCode+' value='+time+'>我要投放</span></div></div></li>')
+								
+								}
+							}else{
+								$('.g-add-list ul').append('<li style="font-size:.3rem;color:#949494">暂无内容</li>')
+							}	
+							}else{
+								$('.g-add-list ul').append('<li style="font-size:.3rem;color:#949494">暂无内容</li>')
+							}
+					}
+			})
+			$('.g-add-list').on('click','.u-button',function(){
+				location.href='https://oms.uselect.com.cn/investment-attracting/market-submit.html?code='+$(this).attr('title')+'&marketName='+marketName+'&time='+$(this).attr('value')
+			})
+		})()
+
+	</script>
+
+</body>
+</html>

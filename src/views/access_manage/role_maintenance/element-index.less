@@ -1,0 +1,54 @@
+.access-dialog {
+    .el-checkbox {
+      margin-right: 20px;
+    }
+    .is-focus .el-checkbox__inner {
+      border: 1px solid #1989fa;
+    }
+    
+    .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+      background-color: #1989fa;
+      border-color: #1989fa;
+    }
+    .el-checkbox__inner {
+      border: 1px solid #1989fa;
+    }
+    .el-dialog__body span {
+      font-size: 12px;
+    }
+    .el-tree{
+        border-bottom: 2px solid #f2f2f2;
+        margin-bottom:20px;
+        .el-tree-node__content {
+            height: 40px;
+            line-height: 40px;
+          }
+        .el-tree-node__content > .el-tree-node__expand-icon {
+        font-size: 16px;
+        color: #ff7623;
+        margin-right: 30px;
+        }
+        .el-tree-node__expand-icon.is-leaf {
+        color: transparent;
+        }
+    }
+    .el-tree>.el-tree-node{
+        border-top:1px solid #f2f2f2;
+        margin:0 20px;
+    }
+    .el-tree>.el-tree-node:nth-child(1){
+        border-top:none !important;
+    }
+    .el-scrollbar{
+        border-bottom: 2px solid #f2f2f2;
+        margin-bottom:20px;
+        .el-tree{
+            border:none;
+            margin-bottom:0;
+        }
+        .el-scrollbar__wrap {  
+           overflow-x: hidden;
+        }
+    }
+  }

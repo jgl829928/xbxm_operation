@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>详情</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/news.css">
+</head>
+<body>
+	<div class="g-content">
+        <div class="m-paragraph-first">
+            <div class="u-title">
+        </div>
+        <div class="u-little-title">
+            <span class="u-author"></span>
+            <span class="u-time"></span>
+        </div>
+            <div class="u-content">
+            </div>
+        </div>
+	</div>
+    <script src="./js/zepto.js"></script>
+    <script>
+        (function(){
+    //获取页面传过来的参数
+    var getQueryString= function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            var q = window.location.pathname.substr(1).match(reg_rewrite);
+            if(r != null){
+                return decodeURIComponent(r[2]);
+            }else if(q != null){
+                return decodeURIComponent(q[2]);
+            }else{
+                return null;
+            }
+        }
+    var contentCode = getQueryString('contentCode')
+          $.ajax({
+             url:'https://oms.uselect.com.cn/business/operation/contents/one/'+contentCode,
+            type:'get',
+            dataType:'json',
+            success:function(res){
+                if(res && res.data &&res.code == 0){
+                    $('.m-paragraph-first .u-content').html(res.data.content)
+                    $('.u-title').html(res.data.title)
+                    $('.u-author').html(res.data.author)
+                    $('.u-time').html(res.data.createTime)
+                }else{
+                    $('.u-title').html('文章不存在')
+                }
+            }
+        })          
+      })()
+
+    </script>
+</body>
+</html>

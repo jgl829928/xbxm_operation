@@ -1,0 +1,214 @@
+.g-index {
+	background: #fafafa;
+	position: relative;
+	&>div {
+		display: inline-block;
+		width: 48.75%;
+		height: 350px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		padding: 20px 0;
+		background: #fff;
+		vertical-align: middle;
+		box-sizing: border-box;
+	}
+	&>div:nth-child(2),&>div:nth-child(6){
+		margin-right: 0px;
+	}
+	&>div:nth-child(4),&>div:nth-child(5),&>div:nth-child(6){
+		margin-bottom: 0px;
+		padding-top: 0;
+	}
+	&>div:nth-child(5),&>div:nth-child(6){
+		width: 23.13%;
+	}
+	&>div:nth-child(5){
+		margin-right: 20px;
+	}
+	&>div:nth-child(1){
+		padding-top: 0;
+		width:41%;
+	}
+	&>div:nth-child(2){
+		width:56.49%;
+	}
+	.m-booth-bar {
+		overflow:auto;
+	}
+	/*2号柱状图*/
+	#m-booth-bar{
+		width: 100%;
+		height: 300px;
+		padding-right: 140px;
+	}
+	/*3号饼状图*/
+	#m-property-pie {
+		display: inline-block;
+		margin-left: 20px;
+		width: 40%;
+
+		height: 300px;
+		vertical-align: bottom;
+	}
+	/*3号图信息*/
+	.m-property-message {
+		width: 220px;
+		margin-right: 20px;
+		margin-top: 80px;
+		vertical-align: top;
+		font-size: 14px;
+		color: #444;
+		.u-title {
+			background: #f8f8f8;
+			a {
+				font-size: 12px;
+				color: #3F87F5;
+			}
+		}
+		h4 {
+			font-size: 12px;
+		}
+		h5 {
+			font-size: 14px;
+			font-weight: 700;
+		}
+		h6 {
+			font-size: 12px;
+			color: #666;
+			text-align: right;
+		}
+	}
+	.u-inline{
+		display: inline-block;
+	}
+	.fl {
+		float: left;
+	}
+	.fr {
+		float: right;
+	}
+	.u-right,.u-left {
+		margin-top: 28px;
+		margin-bottom:28px;
+	}
+	.u-left {
+		margin-left: 20px;
+	}
+	.u-right {
+		margin-right: 25px;
+	}
+	.u-tip {
+		position: absolute;
+		left: 20%;
+		bottom: 60px;
+	}
+	.u-tip1 {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 30px;
+	}
+	.u-line {
+		width: 100%;
+		height: 3px;
+		margin-bottom: 40px;
+		background: #ADADAD;
+	}
+	.m-category-pie,.m-property-pie {
+		position: relative;
+	}
+	#u-market-contract,#u-category {
+		display: inline-block;
+		width: 100%;
+		height: 300px;
+	}
+	.m-market-pie {
+		overflow: auto;
+	}
+	.u-1{
+		position: relative;
+		display:inline-block;
+		width: 100%;
+		margin-top: 30px;
+		&>div {
+			width: 100%;
+			height: 220px;
+		}
+	}
+	.u-select{
+		margin-left: 10px;
+		margin-right: 16px;
+	}
+
+	.u-name{
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #444;
+	}
+	.u-legend {
+		position:absolute;
+		top: 0;
+		right: 0px;
+		width: 110px;
+		height: 350px;
+		padding: 21px 0px 0px 17px;
+		background: #FFFFFF;
+box-shadow: 0 2px 10px 0 rgba(0,0,0,0.06);
+		span {
+			display: inline-block;
+			line-height: 15px;
+			margin-bottom: 13px;
+			font-size: 12px;
+			color: #666666;
+		}
+		span:before{
+			content:'';
+			display: inline-block;
+			height: 12px;
+			width: 12px;
+			margin-right: 6px;
+			vertical-align: middle;
+		}
+		.u-1:before{
+			background: #AAE0FC;
+		}
+		.u-2:before{
+			background: #FFC86E;
+		}
+		.u-3:before{
+			background: #FF7623;
+		}
+		.u-4:before{
+			background: #F5A623;
+		}
+		.u-5:before{
+			background: #FD9E65;
+		}
+		.u-6:before{
+			background: #5AB2E0;
+		}
+		.u-7:before{
+			background: #FDCFB3;
+		}
+	}
+	.m-market-pie, .m-booth-bar,.m-property-pie,.m-category-pie,.u-category{
+		position:relative;
+		&>i {
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			font-size: 200px;
+			color: #e1e1e1;
+		}
+	}
+	.u-main-title{
+		position: absolute;
+		left: 26px;
+		top: 17px;
+		color: #666;
+		font-size: 14px;
+	}
+}

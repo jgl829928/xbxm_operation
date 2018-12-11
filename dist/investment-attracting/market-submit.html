@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>提交资料（广告位）</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/market-submit.css">
+    <link rel="stylesheet" href="./css/Mdate.css">
+
+</head>
+
+<body>
+    <div class="g-content">
+        <p class="u-title">
+            请留下您的个人信息，我们将尽快和您联系～
+        </p>
+        <div class="m-form">
+            <ul>
+                <li>
+                    <label for="username">姓名</label>
+                    <input type="text" placeholder="请输入姓名" name="" maxlength="20" class="name">
+                </li>
+                <li>
+                    <label for="username">联系方式</label>
+                    <input type="text" placeholder="请输入手机号码" maxlength="11" class="iphone">
+                </li>
+                <li>
+                    <label for="username">经营主品牌</label>
+                    <input type="text" placeholder="请输入经营主品牌" class="brand"  maxlength="30">
+                </li>
+                <li>
+                    <label for="username">开始投放时间</label>
+                    <input id="dateSelectorOne" class="timer" type="text" readonly placeholder="请选择时间">
+                </li>
+                <li>
+                    <label for="username" class="u-label">投放周期</label>
+                    <div class="select-add">
+                            <div class="select-head">
+                                <span class="select-head-cont" value="">请选择</span>
+                                <span class="select-icon"></span>
+                            </div>
+                            <ul class="option">
+                                <li class="option-item" value="1">3个月</li>
+                                <li class="option-item" value="2">6个月</li>
+                                <li class="option-item" value="3">12个月</li>
+                            </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <p class="u-button">
+            <input type="button" value="提交">
+        </p>
+    </div>
+
+    <div class="message">
+        <p class="text"></p>
+    </div>
+
+    <script src="./js/zepto.js"></script>
+    <script type="text/javascript" src="./js/fastClick.js"></script>
+    <script src="./js/Mdate/iScroll.js"></script>
+    <script src="./js/Mdate/Mdate.js"></script>
+    <script>
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+   //获取页面传过来的参数
+    var getQueryString= function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            var q = window.location.pathname.substr(1).match(reg_rewrite);
+            if(r != null){
+                return decodeURIComponent(r[2]);
+            }else if(q != null){
+                return decodeURIComponent(q[2]);
+            }else{
+                return null;
+            }
+        }
+    var marketName=getQueryString('marketName')
+     $('title').html(marketName)
+    var time = getQueryString('time')
+    var timerg = /^2[0-9]{3}-(0[1-9]|1[012])$/
+    var option
+    if(timerg.test(time)){
+        var timeArr = time.split('-')
+        var year,month
+        if(timeArr[1] == 12){
+            year = Number(timeArr[0])+1
+            month = 0
+        }else{
+            year = timeArr[0]
+            month = timeArr[1]
+        }
+        option = {
+        beginYear:year,
+        beginMonth:Number(month)+1,
+        beginDay:1,
+        endYear:new Date().getFullYear()+10,
+        endMonth:'12',
+        endDay:'31',
+        format:"-"
+    }
+    }else{
+       option = {
+        beginYear:new Date().getFullYear(),
+        beginMonth:new Date().getMonth() + 1,
+        beginDay:new Date().getDate(),
+        endYear:new Date().getFullYear()+10,
+        endMonth:'12',
+        endDay:'31',
+        format:"-"
+    }; 
+    }
+   new Mdate("dateSelectorOne",option)
+
+    var billboardCode=getQueryString('code')
+
+    $('.g-content').on('click','.u-button',function(){
+
+      if(!$('.name').val()){
+        dialog('姓名不能为空');
+        return false;
+      }else if(/(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f])|(\ud83d[\ude80-\udeff])/.test($('.name').val())){
+        dialog('姓名格式有误');
+        return false;
+      }else if(!/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/.test($('.iphone').val())){
+        dialog('手机号码格式不对');
+        return false;
+      }else if(!$('.brand').val()){
+        dialog('经营主品牌不能为空');
+        return false;
+      }else if(!$('.timer').val()){
+        dialog('投放时间不能为空');
+        return false;
+      }else if($('.select-head-cont').text() =='请选择'){
+        dialog('请选择投放周期');
+        return false;
+      }
+      var data={
+        'intentionBeginTime':$('.timer').val()+' 00:00:00',
+        'intentionDuration':$('.select-head-cont').attr('value'),
+        'mainBrandCode':$('.brand').val(),
+        'merchantName':$('.name').val(),
+        'phoneNumber':$('.iphone').val(),
+        'billboardCode':billboardCode
+      }
+    $.ajax({
+       url:'https://oms.uselect.com.cn/business/operation/billboards/register',
+      type:'post',
+      dataType:'json',
+      data:JSON.stringify(data),
+      contentType:"application/json",
+      timeout:3000,
+        beforeSend:function(){
+        $('.u-button input').attr({'disabled':'disabled'}).val('提交中…')
+        $('.u-button').css('background','#FFDAC4')
+        
+     },
+      success:function(res){
+          if(res && res.code == 0){
+            dialog('提交成功，我们将尽快和您联系');
+         setTimeout(function(){
+                 window.history.back()
+         },1200)
+          }else{
+        dialog(res.msg);
+        $(".u-button input").removeAttr("disabled").val('提交');
+        $('.u-button').css('background','#FF7623')
+    }
+},
+    complete: function () {//完成响应
+        setTimeout(function(){
+             $(".u-button input").removeAttr("disabled");
+             $('.u-button').val('提交').css('background','#FF7623')
+        },1201)
+    },
+    error: function (data) {
+        dialog("网络有误请稍后重试");
+        $(".u-button input").removeAttr("disabled").val('提交');
+        $('.u-button').css('background','#FF7623')
+    }
+  })
+
+    })
+
+    function dialog(text,hideFla){
+        $('.message').show().find('.text').text(text);
+        if(!hideFla){
+          setTimeout(function(){
+              $('.message').hide().find('.text').text('');
+          },3000)
+        }
+
+    }
+
+    //  @param  jParent 外层父节点
+    //  @param  j
+       function mySelect (jParent) {
+        var show = false
+        //点击下拉框时
+        jParent.find('.select-head').on("click", function() {
+            $('.option').not(jParent.find('.option')).css('display', 'none')
+            $('.select-head').css('borderColor', '#979797')
+            $('.select-icon').css('transform', 'rotate(0deg)')
+            if (jParent.find('.option').css('display') == 'none') {
+                jParent.find('.option').css('display', 'block')
+                jParent.find('.select-head').css('borderColor', '#FF7623')
+                show = true
+                jParent.find('.select-icon').css('transform', 'rotate(180deg)')
+            } else {
+                jParent.find('.option').css('display', 'none')
+                jParent.find('.select-head').css('borderColor', '#979797')
+                show = false
+                jParent.find('.select-icon').css('transform', 'rotate(0deg)')
+            }
+        });
+        //点击option-item
+        jParent.find('.option-item').on('click', function() {
+            $(this).css('color', '#FF7623').siblings().css('color', '#484848')
+            jParent.find('.option').css('display', 'none')
+            jParent.find('.select-head').css('borderColor', '#979797')
+            jParent.find('.select-head-cont').css('color', '#484848 ').html($(this).html()).attr('value',$(this).attr('value'))
+            show = false
+            jParent.find('.select-icon').css('transform', 'rotate(0deg)')
+        })
+
+        // /*点击其他地方时，select会收起来*/
+        document.body.addEventListener('click', function(e) {
+            if (e.target.classList.contains('select-head') || e.target.classList.contains('select-head-cont') || e.target.classList.contains('select-icon')) return
+                if (show) {
+                    jParent.find('.option').css('display', 'none');
+                    jParent.find('.select-icon').css('transform', 'rotate(0deg)')
+                    $('body').find('.select-head').css('borderColor', '#979797')
+                }
+            }, false);
+    }
+
+    mySelect($(".select-add"));
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>招商了</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/ad-attract.css">
+</head>
+<body>
+	<div class="g-ad">
+		<header>
+			<img src="./images/ad-attract-bg.png" alt="">
+		</header>
+	<div class="u-middle">
+    <p title="51000007">峨眉山商场</p>
+	</div>
+	<div class="flex"></div>
+	<footer class="u-submit">
+		<img src="./images/ad-attract-footer.png" alt="">
+	</footer>
+	</div>
+	<script src="./js/zepto.js"></script>
+	<script type="text/javascript" src="./js/fastClick.js"></script>
+	<script>
+		(function(){
+			   if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+  // //获取页面传过来的参数
+  //   var getQueryString= function (name) {
+  //           var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  //           var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+  //           var r = window.location.search.substr(1).match(reg);
+  //           var q = window.location.pathname.substr(1).match(reg_rewrite);
+  //           if(r != null){
+  //               return decodeURIComponent(r[2]);
+  //           }else if(q != null){
+  //               return decodeURIComponent(q[2]);
+  //           }else{
+  //               return null;
+  //           }
+  //         }
+		// 	$.ajax({
+		// 		url:'https://oms.uselect.com.cn/business/basic/markets/list?areaCode=510',
+		// 		headers:{'sys_authentication':'123456','sys_id':'YX_OPERATION_001'},
+  //     			type:'get',
+  //     			dataType:'json',
+  //     			success:function(res){
+  //     				if(res && res.code == 0 && res.data){
+  //     					for(var i=0;i<res.data.length;i++){
+  //     						var item = res.data[i]
+  //     						$('.u-middle').append('<p title='+item.marketCode+'>'+item.marketName+'</p>')
+  //     					}
+  //     				}
+
+  //     			}
+		// 	})
+			$(".u-middle").on('click','p',function(){
+			window.location.href = 'https://oms.uselect.com.cn/investment-attracting/ad-list.html?marketName='+$(this).html()+'&marketCode='+$(this).attr('title')
+		});
+		})()
+	</script>
+</body>
+</html>

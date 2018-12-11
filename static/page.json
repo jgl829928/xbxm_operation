@@ -1,0 +1,271 @@
+{
+  "pages": [
+    {
+      "path": "/basicInfo/costSetting",
+      "name": "costSetting",
+      "label":"费用设置",
+      "apis": ["costSetting_search:查询","costSetting_add:费用添加", "costSetting_edit:修改"]
+    }, {
+      "path": "/basicInfo/auditProcess",
+      "name": "auditProcess",
+      "label":"审批管理",
+      "apis": ["auditProcess_search:查询", "auditProcess_add:添加", "auditProcess_edit:修改", "auditProcess_info:详情"]
+    }, {
+      "path": "/basicInfo/districtMag",
+      "name": "districtMag",
+      "label":"分区管理",
+      "apis": ["districtMag_search:查询","districtMag_edit:修改区域"]
+    }, {
+      "path": "/basicInfo/mallsMain",
+      "name": "costSetting",
+      "label":"商场信息管理",
+      "apis": ["mallsMain_search:查询","mallsMain_add:增加", "mallsMain_edit:详情","mallsMain_info:修改"]
+    },{
+      "path": "/basicInfo/basicParams",
+      "name": "basicParams",
+      "label":"提醒设置",
+      "apis": ["basicParams_search:提醒参数查询","basicParams_save:保存"]
+    },{
+      "path": "/basicInfo/contractType",
+      "name": "contractType",
+      "label":"合同类型设置",
+      "apis": ["contractType_search:查询","contractType_add:添加", "contractType_delete:删除"]
+    },{
+      "path": "/basicInfo/messageModules",
+      "name": "messageModules",
+      "label":"消息模板设置",
+      "apis": ["messageModules_seatch:查询","messageModules_save:保存"]
+    }, {
+      "path": "/estate/examination",
+      "name": "examination",
+      "label":"巡检考核管理",
+      "apis": ["examination_1:巡检考核管理查询"]
+    }, {
+      "path": "/estate/inspectioCheck",
+      "name": "inspectioCheck",
+      "label":"巡检签到记录",
+      "apis": ["inspectioCheck_1:巡检签到管理"]
+    }, {
+      "path": "/estate/inspectionPoint",
+      "name": "inspectionPoint",
+      "label":"巡检点管理",
+      "apis": ["inspectionPoint_1:巡检签到管理","inspectionPoint_2:巡检点管理添加",
+        "inspectionPoint_3:巡检点管理修改","inspectionPoint_4:巡检点管理配置","inspectionPoint_5:巡检点下载二维码"]
+    },{
+      "path": "/estate/inspectioReport",
+      "name": "inspectioReport",
+      "label":"巡检报告记录",
+      "apis": ["inspectioReport_1:巡检报告记录查询"]
+    },{
+      "path": "/estate/taskManage",
+      "name": "taskManage",
+      "label":"巡检任务管理",
+      "apis": ["taskManage_1:查询"]
+    },{
+      "path": "/estate/seviceRecord",
+      "name": "seviceRecord",
+      "label":"维修记录",
+      "apis": ["seviceRecord_1:维修记录查询", "seviceRecord_2:维修记录添加","seviceRecord_3:维修记录修改","seviceRecord_4:维修记录删除"]
+    },
+    {
+      "path": "/engineering/logs",
+      "name": "engineeringLogs",
+      "label":"工程日志",
+      "apis": ["engineeringLog_1:工程日志查询","engineeringLog_2:工程日志添加"]
+    },{
+      "path": "/engineering/maintenance",
+      "name": "engineeringMain",
+      "label":"工程维护",
+      "apis": ["engineeringMain_1:工程维护查询", "engineeringMain_2:工程维护添加","engineeringMain_3:工程维护修改","engineeringMain_4:工程维护删除"]
+    },{
+      "path": "/booth/groupe",
+      "name": "boothGroupe",
+      "label":"摊位分组管理",
+      "apis": ["boothGroupe_1:分组查询", "boothGroupe_2:分组详情","boothGroupe_3:分组修改",
+          "boothGroupe_4:分组添加","boothGroupe_5:分组删除"]
+    },{
+      "path": "/booth/map",
+      "name": "boothMap",
+      "label":"摊位中心",
+      "apis": ["boothMap_1:摊位图查询", "boothMap_2:摊位详情"]
+    },{
+      "path": "/booth/type",
+      "name": "boothType",
+      "label":"摊位类型管理",
+      "apis": ["boothType_1: 摊位类型设置查询","boothType_2:摊位类型设置修改","boothType_3:摊位类型设置添加"]
+    },{
+      "path": "/booth/maintenance",
+      "name": "boothMain",
+      "label":"摊位管理",
+      "apis": ["boothMain_1:摊位维护查询", "boothMain_2:摊位维护修改","boothMain_3:摊位维护添加"]
+    },{
+      "path": "/contact/sign",
+      "name": "sign",
+      "label":"新签/续签",
+      "apis": ["sign_1:新签","sign_2:续签", "sign_4:商户列表-查询"]
+    },{
+      "path": "/contact/audit",
+      "name": "audit",
+      "label":"合同审核",
+      "apis": ["audit_1:审核","audit_2:查看合同","audit_3:编辑合同编号", "audit_4:合同审核-查询"]
+    },{
+      "path": "/contact/search",
+      "name": "contractSearch",
+      "label":"合同查询",
+      "apis": ["contractSearch_1:查看合同","contractSearch_2:查看进度","contractSearch_3:打印合同", "contractSearch_4:合同-查询"]
+    },{
+      "path": "/contact/main",
+      "name": "templateMain",
+      "label":"合同模板维护",
+      "apis": ["templateMain_1:添加","templateMain_2:启/停用","templateMain_3:修改","templateMain_4:合同模板-查询"]
+    },{
+      "path": "/operation/managerTask",
+      "name": "managerTask",
+      "label":"经理月度任务指标",
+      "apis": ["managerTask_1:经理月度任务指标-查询","messageAlert_1:经理月度任务指标-审核"]
+    },{
+      "path": "/operation/marketTask",
+      "name": "marketTask",
+      "label":"商场月度任务指标",
+      "apis": ["monthlyTask_4:月度任务指标-编辑","marketTask_1:商场月度任务指标-查询","marketTask_2:商场月度任务指标-审核"]
+    },{
+      "path": "/operation/messageAlert",
+      "name": "messageAlert",
+      "label":"消息提醒记录",
+      "apis": ["messageAlert_1:消息提醒记录-查询"]
+    },{
+      "path": "/operation/monthlyTask",
+      "name": "monthlyTask",
+      "label":"月度任务指标",
+      "apis": ["monthlyTask_1:月度任务指标-查询","monthlyTask_2:月度任务指标-保存", "monthlyTask_3:月度任务指标-提交"]
+    },{
+      "path": "/operation/taskCheck",
+      "name": "taskCheck",
+      "label":"月度指标考核",
+      "apis": ["taskCheck_1:月度指标考核-查询"]
+    },{
+      "path": "/operation/adsense",
+      "name": "adsense",
+      "label":"广告位管理",
+      "apis": ["adsense_1:广告位管理-查询","adsense_2:广告位管理-新增","adsense_3:广告位管理-修改",
+        "adsense_4:广告位管理-删除","adsense_5:广告位管理-启用","adsense_6:广告位管理-停用"]
+    },{
+      "path": "/operation/rental",
+      "name": "rental",
+      "label":"出租管理",
+      "apis": ["rental_1:出租管理-查询","rental_2:出租管理-新增","rental_3:出租管理-修改",
+        "rental_4:出租管理-删除"]
+    },{
+      "path": "/operation/advertising",
+      "name": "advertising",
+      "label":"广告位招商",
+      "apis": ["advertising_1:广告位招商-查询","advertising_2:广告位招商-查看跟进记录"]
+    },{
+      "path": "/operation/content",
+      "name": "content",
+      "label":"内容管理",
+      "apis": ["content_1:内容管理-查询","content_2:内容管理-新增","content_3:内容管理-修改",
+        "content_4:内容管理-删除","content_5:内容管理-发布","content_6:内容管理-停止发布"]
+    },{
+      "path": "/operation/mnangement",
+      "name": "mnangement",
+      "label":"商场招商管理",
+      "apis": ["mnangement_1:商场招商管理-查询","mnangement_2:商场招商管理-查看跟进记录"]
+    },{
+      "path": "/operation/warn",
+      "name": "warn",
+      "label":"提醒管理",
+      "apis": ["warn_1:提醒管理-查询","warn_2:提醒管理-删除"]
+    },{
+      "path": "/merchant/brandMain",
+      "name": "brandMain",
+      "label":"品牌管理",
+      "apis": ["brandMain_1:品牌管理-查询","brandMain_2:品牌管理-新增","brandMain_3:品牌管理-修改"]
+    },{
+      "path": "/merchant/merchantManage",
+      "name": "merchantManage",
+      "label":"商户管理",
+      "apis": ["merchantManage_1:商户管理-查询","merchantManage_2:商户管理-新增","merchantManage_3:商户管理-修改",
+        "merchantManage_4:商户管理-删除", "merchantManage_5:商户管理-详情"]
+    },{
+      "path": "/statistics/boothInfoSearch",
+      "name": "boothInfoSearch",
+      "label":"收款信息查询",
+      "apis": ["boothInfoSearch_1:收款信息查询-查询","boothInfoSearch_2:收款信息查询-导出"]
+    },{
+      "path": "/statistics/colInfoSearch",
+      "name": "colInfoSearch",
+      "label":"摊位信息查询",
+      "apis": ["colInfoSearch_1:摊位信息查询-查询"]
+    },{
+      "path": "/statistics/merInfoSearch",
+      "name": "merInfoSearch",
+      "label":"商户信息查询",
+      "apis": ["merInfoSearch_1:商户信息查询"]
+    },{
+      "path": "/finance/contractReceipts",
+      "name": "contractReceipts",
+      "label":"合同收款",
+      "apis": ["contractReceipts_1:合同收款查询","contractReceipts_2:合同收款收款"]
+    },{
+      "path": "/finance/contractRefunds",
+      "name": "contractRefunds",
+      "label":"合同退款",
+      "apis": ["contractRefunds_1:合同退款查询","contractRefunds_2:合同退款退款申请","contractRefunds_3:合同退款审核",
+        "contractRefunds_4:合同退款退款","contractRefunds_5:合同退款查看进度"]
+    },{
+      "path": "/finance/dailyCosthandling",
+      "name": "dailyCosthandling",
+      "label":"日常费用处理",
+      "apis": ["dailyCosthandling_1:日常费用处理查询","dailyCosthandling_2:日常费用处理收款录入","dailyCosthandling_3:日常费用处理修改",
+        "dailyCosthandling_4:日常费用处理删除","dailyCosthandling_5:常费用处理收款","dailyCosthandling_6:日常费用处理退款申请"]
+    },{
+      "path": "/finance/dailyRefunds",
+      "name": "dailyRefunds",
+      "label":"日常退款",
+      "apis": ["dailyRefunds_1:日常退款查询","dailyRefunds_2:日常退款审核","dailyRefunds_3:日常退款退款",
+        "dailyRefunds_4:日常退款查看进度"]
+    },{
+      "path": "/estate/device",
+      "name": "device",
+      "label":"物业设备管理",
+      "apis": ["device_search:查看","device_add:添加","device_edit:修改"]
+    },{
+      "path": "/estate/maintenance",
+      "name": "maintenance",
+      "label":"物业维保管理",
+      "apis": ["maintenance_search:搜索","maintenance_add:添加","maintenance_delete:删除","maintenance_edit:修改"
+      ,"maintenance_contractInfo:查看合同","maintenance_accessoryInfo:查看附件"]
+    },{
+      "path": "/estate/company",
+      "name": "company",
+      "label":"物业公司管理",
+      "apis": ["company_search:查看","company_add:新增","company_edit:编辑"]
+    },{
+      "path": "/estate/expenditure",
+      "name": "expenditure",
+      "label":"物业支出管理",
+      "apis": ["expenditure_delete:删除","expenditure_search:搜索","expenditure_add:添加","expenditure_edit:编辑","expenditure_info:查看"]
+    },{
+      "path": "/estate/staff",
+      "name": "staff",
+      "label":"员工管理",
+      "apis": ["staff_search:搜索","staff_add:添加","staff_edit:编辑"]
+    },{
+      "path": "/authority/menuMain",
+      "name": "menuMain",
+      "label":"菜单维护",
+      "apis": ["menuMain_1:菜单维护查询","menuMain_2:菜单维护添加","menuMain_3:菜单维护修改","menuMain_4:菜单维护删除"]
+    },{
+      "path": "/authority/personnelMain",
+      "name": "personnelMain",
+      "label":"人员维护",
+      "apis": ["personnelMain_1:人员维护","personnelMain_2:人员维护添加","personnelMain_3:人员维护修改","personnelMain_4:人员维护查看","personnelMain_5:导入员工信息"]
+    },{
+      "path": "/authority/roleMain",
+      "name": "roleMain",
+      "label":"角色维护",
+      "apis": ["roleMain_1:角色维护查询","roleMain_2:角色维护添加","roleMain_3:角色维护修改","roleMain_4:角色维护查看详情","roleMain_5:角色维护分配权限"]
+    }
+  ]
+}
